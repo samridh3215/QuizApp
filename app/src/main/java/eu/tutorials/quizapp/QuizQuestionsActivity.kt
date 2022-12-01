@@ -11,7 +11,7 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
-    //create variables for each view in the layout
+
     private var progressBar:ProgressBar?=null
     private var tvProgress: TextView? = null
     private var tvQuestion:TextView? = null
@@ -23,7 +23,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
    private var buttonSubmit:Button? = null
 
 
-    private var mCurrentPosition: Int = 1 // Default and the first question position
+    private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
     private var mCorrectAnswers: Int = 0
     private var mUserName: String? = null
@@ -32,11 +32,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
 
-        //Get the NAME from intent and assign it the variable
-        // START
+
         mUserName = intent.getStringExtra(Constants.USER_NAME)
-        // END
-        //connect to the view by its id
+
         progressBar=findViewById(R.id.progressBar)
         tvProgress = findViewById(R.id.tv_progress)
         tvQuestion = findViewById(R.id.tv_question)
